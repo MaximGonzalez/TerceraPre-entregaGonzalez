@@ -1,5 +1,7 @@
 {% extends "blog_app/base.html" %}
 
+
+
 {% block contenido %}
 <div class="container px-4 px-lg-5 h-100">
     <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
@@ -9,7 +11,15 @@
         </div>
         <div class="col-lg-8 align-self-baseline">
             <p class="text-white-75 mb-5">crear posteo</p>
+            <form method="POST">
+                {% csrf_token %}
+                {{formulario_post.as_p}}
+                <button>
+                    Crear
+                </button>
+            </form>
         </div>
     </div>
 </div>
+
 {% endblock contenido %}

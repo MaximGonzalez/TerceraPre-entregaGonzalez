@@ -12,4 +12,16 @@
         </div>
     </div>
 </div>
+
 {% endblock contenido %}
+{% block posteos %}
+<h5>
+    {% for post in posteos %}
+
+    <h1>{{post.titulo}}</h1>
+    <h4>{{post.contenido}}</h4>
+    <h4>{{post.fecha_publicacion}}</h4>
+
+    {% endfor %}
+</h5>
+{% endblock posteos %}

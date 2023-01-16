@@ -8,5 +8,5 @@ urlpatterns = [
     path("posteos/", posteos, name="posteos"),
     path("comentarios/", comentarios, name="comentarios"),
     path("about/", about, name="about"),
-    path("crearpost/", crear_post, name="crear_post"),
+    path("crearpost/", crear_posteos, name="crear_post"),
 ]

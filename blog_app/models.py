@@ -1,4 +1,6 @@
 from django.db import models
+from django.utils import timezone
+from datetime import datetime
 
 # Create your models here.
 
@@ -14,7 +16,7 @@ class Usuario(models.Model):
 class Post(models.Model):
     titulo = models.CharField(max_length=64)
     contenido = models.TextField()
-    fecha_publicacion = models.DateTimeField()
+    fecha_publicacion = models.DateTimeField(default=timezone.now)
 
 class Comentario(models.Model):
     texto = models.CharField(max_length=256)
