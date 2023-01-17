@@ -599,6 +599,12 @@ progress {
   content: "— ";
 }
 
+.form-group input::placeholder {
+  font-style: italic;
+  color: gray;
+  font-size: 0.8em;
+}
+
 .img-fluid {
   max-width: 100%;
   height: auto;

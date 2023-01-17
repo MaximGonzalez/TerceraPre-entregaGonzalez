@@ -8,8 +8,20 @@
             <hr class="divider" />
         </div>
         <div class="col-lg-8 align-self-baseline">
-            <p class="text-white-75 mb-5">Usuarios</p>
+            <p class="text-white-75 mb-5"><a href="{% url 'crear_usuarios' %}" class="text-white font-weight-bold" style="text-decoration: none; font-size:40px">Crear nuevo usuario</a></p>
         </div>
     </div>
 </div>
 {% endblock contenido %}
+{% block posteos %}
+
+
+<h5>
+    {% for usuario in usuarios %}
+
+    <h1>{{usuario}}</h1>
+    <hr class="divider2" />
+
+    {% endfor %}
+</h5>
+{% endblock posteos %}

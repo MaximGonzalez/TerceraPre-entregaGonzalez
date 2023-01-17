@@ -8,13 +8,15 @@
             <hr class="divider" />
         </div>
         <div class="col-lg-8 align-self-baseline">
-            <p class="text-white-75 mb-5">Posteos</p>
+            <p class="text-white-75 mb-5"><a href="{% url 'crear_posteos' %}" class="text-white font-weight-bold" style="text-decoration: none; font-size:40px">Crear nuevo posteo</a></p>
         </div>
     </div>
 </div>
 
 {% endblock contenido %}
 {% block posteos %}
+
+
 <h5>
     {% for post in posteos %}
 
