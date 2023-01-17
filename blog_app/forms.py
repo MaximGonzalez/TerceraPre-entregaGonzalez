@@ -1,5 +1,6 @@
 from django import forms
 from datetime import date
+from blog_app.models import Usuario
 
 
 class crear_usuario(forms.Form):
@@ -13,3 +14,4 @@ class crear_usuario(forms.Form):
 class crear_posteo(forms.Form):
     titulo = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Ingrese el título'}), max_length=64)
     contenido = forms.CharField(widget=forms.Textarea(attrs={'placeholder': 'Ingrese el contenido'}), max_length=256)
+    usuario = forms.ModelChoiceField(queryset=Usuario.objects.all())

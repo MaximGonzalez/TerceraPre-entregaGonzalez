@@ -13,13 +13,14 @@ class Usuario(models.Model):
     fecha_nacimiento = models.DateField()
 
     def __str__(self):
-        return f"{self.usuario}, {self.mail}"
+        return f"{self.usuario}"
 
 
 class Post(models.Model):
     titulo = models.CharField(max_length=64)
     contenido = models.TextField()
     fecha_publicacion = models.DateTimeField(default=timezone.now)
+    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE, default='1')
 
 class Comentario(models.Model):
     texto = models.CharField(max_length=256)
