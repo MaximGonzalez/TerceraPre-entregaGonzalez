@@ -1,17 +1,19 @@
 {% extends "blog_app/base.html" %}
 
 {% block contenido %}
-<div class="container px-4 px-lg-5 h-100">
-    <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
-        <div class="col-lg-8 align-self-end">
-            <h1 class="text-white font-weight-bold">Esta es la vista de usuarios</h1>
-            <hr class="divider" />
-        </div>
-        <div class="col-lg-8 align-self-baseline">
-            <p class="text-white-75 mb-5"><a href="{% url 'crear_usuarios' %}" class="text-white font-weight-bold" style="text-decoration: none; font-size:40px">Crear nuevo usuario</a></p>
+<header class="masthead">
+    <div class="container px-4 px-lg-5 h-100">
+        <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+            <div class="col-lg-8 align-self-end">
+                <h1 class="text-white font-weight-bold">Esta es la vista de usuarios</h1>
+                <hr class="divider" />
+            </div>
+            <div class="col-lg-8 align-self-baseline">
+                <p class="text-white-75 mb-5"><a href="{% url 'crear_usuarios' %}" class="text-white font-weight-bold" style="text-decoration: none; font-size:40px">Crear nuevo usuario</a></p>
+            </div>
         </div>
     </div>
-</div>
+</header>
 {% endblock contenido %}
 {% block posteos %}
 

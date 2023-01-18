@@ -22,6 +22,10 @@ class Post(models.Model):
     fecha_publicacion = models.DateTimeField(default=timezone.now)
     usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE, default='1')
 
+    def __str__(self):
+        return f"{self.titulo}"
+
 class Comentario(models.Model):
     texto = models.CharField(max_length=256)
-    fecha_publicacion = models.DateTimeField()
+    fecha_publicacion = models.DateTimeField(default=timezone.now)
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, default='1')
