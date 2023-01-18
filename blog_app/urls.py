@@ -7,7 +7,6 @@ urlpatterns = [
     path("usuarios/", usuarios, name="usuarios"),
     path("posteos/", posteos, name="posteos"),
     path("comentarios/", comentarios, name="comentarios"),
-    path("about/", about, name="about"),
     path("crearposteos/", crear_posteos, name="crear_posteos"),
     path("crearusuarios/", crear_usuarios, name="crear_usuarios"),
     path("buscarposteos/", buscar_posteos, name="buscar_posteos"),

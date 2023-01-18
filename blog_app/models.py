@@ -2,8 +2,8 @@ from django.db import models
 from django.utils import timezone
 from datetime import datetime
 
-# Create your models here.
 
+# Create your models here.
 class Usuario(models.Model):
     usuario = models.CharField(max_length=64)
     contrasenia = models.CharField(max_length=64)

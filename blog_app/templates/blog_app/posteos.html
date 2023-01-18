@@ -1,5 +1,7 @@
 {% extends "blog_app/base.html" %}
 
+
+
 {% block contenido %}
 <header class="masthead">
     <div class="container px-4 px-lg-5 h-100">
@@ -18,10 +20,8 @@
 <section class="page-section" id="buscar">
     <form class="align-items-center text-center" action="{% url 'buscar_posteos' %}" method="post">
         {% csrf_token %}
-        <input type="text" name="titulo">
+        <input type="text" name="titulo" placeholder="Ingrese el titulo">
         <input type="submit" value="Buscar">
     </form>
 </section>
 {% endblock contenido %}
-
-

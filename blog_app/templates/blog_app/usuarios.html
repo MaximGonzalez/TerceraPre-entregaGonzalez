@@ -1,5 +1,7 @@
 {% extends "blog_app/base.html" %}
 
+
+
 {% block contenido %}
 <header class="masthead">
     <div class="container px-4 px-lg-5 h-100">
@@ -10,20 +12,27 @@
             </div>
             <div class="col-lg-8 align-self-baseline">
                 <p class="text-white-75 mb-5"><a href="{% url 'crear_usuarios' %}" class="text-white font-weight-bold" style="text-decoration: none; font-size:40px">Crear nuevo usuario</a></p>
+                <p class="text-white-75 mb-5"><a href="#usuarios" class="text-white font-weight-bold" style="text-decoration: none; font-size:40px">Ver lista de usuarios</a></p>
             </div>
         </div>
     </div>
 </header>
 {% endblock contenido %}
+
 {% block posteos %}
-
-
-<h5>
-    {% for usuario in usuarios %}
-
-    <h1>{{usuario}}</h1>
-    <hr class="divider2" />
-
-    {% endfor %}
-</h5>
+<section class="page-section" id="usuarios">
+    <table class="table">
+        <body>
+            <tr>
+                <th>Usuarios</th>
+            </tr>
+                {% for usuario in usuarios %}
+                <tr>
+                    <td>Username: {{usuario.usuario}}<br>
+                    </td>
+                </tr>
+                {% endfor %}
+        </body>
+    </table>
+</section>
 {% endblock posteos %}

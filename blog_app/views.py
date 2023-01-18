@@ -39,17 +39,11 @@ def posteos(request):
 
 
 def comentarios(request):
+    contexto = {'comentarios' : Comentario.objects.all()}
     return render(
         request=request,
         template_name='blog_app/comentarios.html',
-    )
-
-
-
-def about(request):
-    return render(
-        request=request,
-        template_name='blog_app/about.html',
+        context=contexto,
     )
 
 
@@ -86,14 +80,11 @@ def crear_usuarios(request):
         print(request.POST)
         form = Crear_usuario(request.POST)
         if form.is_valid():
-            fecha_nacimiento = form.cleaned_data['fecha_nacimiento']
-        Usuario.objects.create(usuario = request.POST["usuario"], contrasenia = request.POST["contrasenia"], mail = request.POST["mail"], nombre = request.POST["nombre"], apellido = request.POST["apellido"], fecha_nacimiento = fecha_nacimiento,)
-        contexto = {'formulario_usuario' : Crear_usuario}
-        return render(
-        request,
-        template_name='blog_app/crear_usuario.html',
-        context=contexto
-        )
+            data = form.cleaned_data
+            usuario = Usuario(usuario = data["usuario"], contrasenia = data["contrasenia"], mail = data["mail"], nombre = data["nombre"], apellido = data["apellido"], fecha_nacimiento = data['fecha_nacimiento'])
+            usuario.save()
+            url_exitosa = reverse('usuarios')
+        return redirect(url_exitosa)
 
 
 
